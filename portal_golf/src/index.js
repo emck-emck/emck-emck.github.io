@@ -1,10 +1,10 @@
 //Imports
-import {SCREEN_HEIGHT, SCREEN_WIDTH} from './src/utils/constants.js';
-import MenuScene from './src/scenes/MenuScene.js';
-import GameScene from './src/scenes/GameScene.js';
-import WinScene from './src/scenes/WinScene.js';
-import InstructionsMenuScene from './src/scenes/InstructionsMenuScene.js';
-import PauseMenuScene from './src/scenes/PauseMenuScene.js';
+import {SCREEN_HEIGHT, SCREEN_WIDTH} from './utils/constants.js';
+import MenuScene from './scenes/MenuScene.js';
+import GameScene from './scenes/GameScene.js';
+import WinScene from './scenes/WinScene.js';
+import InstructionsMenuScene from './scenes/InstructionsMenuScene.js';
+import PauseMenuScene from './scenes/PauseMenuScene.js';
 
 //Magic Phaser3 Configuration Stuff
 const config = {
