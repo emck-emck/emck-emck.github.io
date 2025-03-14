@@ -10,7 +10,7 @@ class InstructionsMenuScene extends Phaser.Scene {
 		this.load.text('instructions', ASSET_FILEPATH_TXT + 'instructions.txt');
 
 		this.load.image('instructionsbg', ASSET_FILEPATH_INSTRUCTIONS + 'instructions_bg.png');
-        this.load.image('nextPageButton', ASSET_FILEPATH_INSTRUCTIONS + 'next.png');
+        this.load.image('nextPageButton', ASSET_FILEPATH_INSTRUCTIONS + 'next_page.png');
         this.load.image('prevButton', ASSET_FILEPATH_INSTRUCTIONS + 'prev.png');
         this.load.image('backButton', ASSET_FILEPATH_INSTRUCTIONS + 'back.png');
     }
