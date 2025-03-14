@@ -17,7 +17,7 @@ class WinScene extends Phaser.Scene {
     preload(){
         // Load any assets needed for the win menu
 		this.load.image('winbg', ASSET_FILEPATH_WIN + 'win_bg.png');
-        this.load.image('nextButton', ASSET_FILEPATH_WIN + 'next.png');
+        this.load.image('nextHoleButton', ASSET_FILEPATH_WIN + 'next_hole.png');
         this.load.image('quitButton', ASSET_FILEPATH_WIN + 'quit.png');
     }
 
@@ -57,7 +57,7 @@ class WinScene extends Phaser.Scene {
 				//Next level Button
 				const restartx = bgx + bwidth * 0.25;
 				const restarty = bgy + bheight * 0.8;
-				const nextButton = this.add.image(restartx, restarty, 'nextButton').setInteractive();
+				const nextButton = this.add.image(restartx, restarty, 'nextHoleButton').setInteractive();
 				nextButton.on('pointerdown', this.nextLevel, this);
 
 				//Quit button
