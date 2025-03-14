@@ -10,7 +10,7 @@ class InstructionsMenuScene extends Phaser.Scene {
 		this.load.text('instructions', ASSET_FILEPATH_TXT + 'instructions.txt');
 
 		this.load.image('instructionsbg', ASSET_FILEPATH_INSTRUCTIONS + 'instructions_bg.png');
-        this.load.image('nextButton', ASSET_FILEPATH_INSTRUCTIONS + 'next.png');
+        this.load.image('nextPageButton', ASSET_FILEPATH_INSTRUCTIONS + 'next.png');
         this.load.image('prevButton', ASSET_FILEPATH_INSTRUCTIONS + 'prev.png');
         this.load.image('backButton', ASSET_FILEPATH_INSTRUCTIONS + 'back.png');
     }
@@ -43,7 +43,6 @@ class InstructionsMenuScene extends Phaser.Scene {
 			this.add.image(swidth/2, sheight/2, 'instructionsbg');
 
 			//Instructions text
-			const instructionsText = this.cache.text.get('instructions1');
 			const textx = bgx + bwidth/2 + borderwidth;
 			const texty = bheight - bgy/2;
 			const textStyle = {
@@ -60,7 +59,7 @@ class InstructionsMenuScene extends Phaser.Scene {
 			const prevx = swidth/2 - 100;
 			const prevy = bgy + bheight * 0.65;
 
-			this.nextButton = this.add.image(nextx, nexty, 'nextButton').setInteractive();
+			this.nextButton = this.add.image(nextx, nexty, 'nextPageButton').setInteractive();
 			this.nextButton.on('pointerdown', () => this.changePage(1), this);
 			this.prevButton = this.add.image(prevx, prevy, 'prevButton').setInteractive();
 			this.prevButton.on('pointerdown', () => this.changePage(-1), this);
