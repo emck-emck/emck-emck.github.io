@@ -1,4 +1,5 @@
 import MenuListener from '../handlers/MenuListener.js';
+import {ASSET_FILEPATH_LEADERBOARD} from '../utils/constants.js';
 
 class LeaderboardScene extends Phaser.Scene {
     constructor(){
@@ -6,7 +7,8 @@ class LeaderboardScene extends Phaser.Scene {
     }
 
     preload(){
-
+		this.load.image('leaderbordScreen', ASSET_FILEPATH_LEADERBOARD + 'leaderboard_bg.png');
+		this.load.image('leaderboardBackButton', ASSET_FILEPATH_LEADERBOARD + 'leaderboard_back.png');
     }
 
     async create(){
@@ -16,7 +18,7 @@ class LeaderboardScene extends Phaser.Scene {
 		const borderwidth = 5;
 
 		//Add background image
-		this.add.image(swidth/2, sheight/2, 'instructionsbg');
+		this.add.image(swidth/2, sheight/2, 'leaderbordScreen');
 
 		//Leaderboard text
 		const textx = swidth/2;
@@ -48,8 +50,8 @@ class LeaderboardScene extends Phaser.Scene {
 		
 		//Back button
 		const backx = swidth/2;
-		const backy = bgy + bheight * 0.8;
-		const backButton = this.add.image(backx, backy, 'backButton').setInteractive();
+		const backy = sheight * 0.75;
+		const backButton = this.add.image(backx, backy, 'leaderboardBackButton').setInteractive();
 		backButton.on('pointerdown', this.back, this);
 
 		const listener = new MenuListener(this);
