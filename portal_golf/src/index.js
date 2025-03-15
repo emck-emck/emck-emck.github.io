@@ -4,6 +4,7 @@ import MenuScene from './scenes/MenuScene.js';
 import GameScene from './scenes/GameScene.js';
 import WinScene from './scenes/WinScene.js';
 import InstructionsMenuScene from './scenes/InstructionsMenuScene.js';
+import LeaderboardScene from './scenes/LeaderboardScene.js';
 import PauseMenuScene from './scenes/PauseMenuScene.js';
 
 //Magic Phaser3 Configuration Stuff
