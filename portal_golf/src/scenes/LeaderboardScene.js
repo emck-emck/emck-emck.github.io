@@ -62,4 +62,4 @@ class LeaderboardScene extends Phaser.Scene {
 
 }
 
-export default InstructionsMenuScene;
+export default LeaderboardScene;
