@@ -27,7 +27,7 @@ class LeaderboardScene extends Phaser.Scene {
 			fontSize: '22px', 
 			fill: '#ffffff', 
 			align: 'center',
-			wordWrap: { width: bwidth - borderwidth }
+			wordWrap: { width: 5 }
 		};
 
 		//Get text
