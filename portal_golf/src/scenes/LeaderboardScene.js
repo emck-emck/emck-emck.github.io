@@ -1,12 +1,12 @@
 import MenuListener from '../handlers/MenuListener.js';
 
-class InstructionsMenuScene extends Phaser.Scene {
+class LeaderboardScene extends Phaser.Scene {
     constructor(){
         super({ key: 'Leaderboard' });
     }
 
     preload(){
-		this.load.json("leaderboard", "https://script.google.com/macros/s/AKfycbyKbsjUJPBh7ij0-qClJwQDGGj2DeQNE3RDQv-pPZ6l26CpYsQS2A6Yz_emv2hmL_lTVg/exec?apiKey=AIzaSyCATNJGxIUKlt01Ps5BKsGPi6BqbTWF3TE");
+
     }
 
     async create(){
@@ -33,10 +33,7 @@ class InstructionsMenuScene extends Phaser.Scene {
 
         let leaderboardText = this.add.text(textx, texty, "Loading...", textStyle);
 
-        try {
-            let response = await fetch("https://script.google.com/macros/s/AKfycbyKbsjUJPBh7ij0-qClJwQDGGj2DeQNE3RDQv-pPZ6l26CpYsQS2A6Yz_emv2hmL_lTVg/exec?apiKey=AIzaSyCATNJGxIUKlt01Ps5BKsGPi6BqbTWF3TE");
-            let scores = await response.json();
-            
+        try {            
             let leaderboardString = scores
                 .slice(0, 10) // Show top 10
                 .map((entry, index) => `${index + 1}. ${entry[0]} - ${entry[1]}`)

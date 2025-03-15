@@ -26,7 +26,7 @@ const config = {
             maxPhysicsSteps: 1, // Max number of physics steps per frame
         }
     },
-	scene: [MenuScene, GameScene, WinScene, InstructionsMenuScene, PauseMenuScene]
+	scene: [MenuScene, GameScene, LeaderboardScene, WinScene, InstructionsMenuScene, PauseMenuScene]
 };
 
 //RUNS THE GAME
