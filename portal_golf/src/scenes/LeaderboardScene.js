@@ -33,17 +33,16 @@ class LeaderboardScene extends Phaser.Scene {
 				fetch('https://pg-leaderboard-worker.portal-golf.workers.dev/topten?page=0')
 					.then(r => r.json())
 					.then(data => {
-						console.log(data);
 						var scores = data.scores;
 						var scoresObj = document.getElementById('scores');
 						var append = '';
 						for(var i = 0; i < scores.length; i++){
 							append = append + "<tr>";
-							append = append + "<td>" + scores.rank + "</td>";
-							append = append + "<td>" + scores.name + "</td>";
-							append = append + "<td>" + scores.putt + "</td>";
-							append = append + "<td>" + scores.time + "</td>";
-							append = append + "<td>" + scores.date + "</td>";
+							append = append + "<td>" + scores[i].rank + "</td>";
+							append = append + "<td>" + scores[i].name + "</td>";
+							append = append + "<td>" + scores[i].putt + "</td>";
+							append = append + "<td>" + scores[i].time + "</td>";
+							append = append + "<td>" + scores[i].date + "</td>";
 							append = append + "</tr>";
 						}
 						scoresObj.innerHTML = append;
