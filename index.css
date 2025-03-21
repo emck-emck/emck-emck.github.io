@@ -1,0 +1,25 @@
+body {
+	background-color: #aaaaaa;
+}
+
+.content {
+    height: 100%; /* Ensure full height */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Centers inline text */
+}
+
+h1, h2, h3, p {
+    width: fit-content; /* Prevents them from stretching full width */
+    margin: 0 auto; /* Ensures they are truly centered */
+}
+
+#links img {
+	max-width: 100%;  /* Prevents it from exceeding the container width */
+    max-height: 400px; /* Limits the height */
+    display: block;    /* Removes extra space below inline images */
+    margin: 0 auto;    /* Centers the image */
+}

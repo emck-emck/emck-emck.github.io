@@ -509,8 +509,8 @@ class GameScene extends Phaser.Scene {
 		//Hole Information
         this.strokesText = this.add.text(10, 10, 'Strokes: 0', { fontSize: MENU_FONT_SIZE, fill: '#fff' });
 		this.timeText = this.add.text(10, 34, 'Time: ' + this.gameTime, { fontSize: MENU_FONT_SIZE, fill: '#fff' })
-		this.holeNameText = this.add.text(870, 10, this.holeDisplayName, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
-        this.parText = this.add.text(870, 34, 'Par: ' + this.par, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
+		this.holeNameText = this.add.text(870, 34, this.holeDisplayName, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
+        this.parText = this.add.text(870, 10, 'Par: ' + this.par, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
 
         // Ensure the menu bar is always on top
         this.children.bringToTop(this.scoreText);
