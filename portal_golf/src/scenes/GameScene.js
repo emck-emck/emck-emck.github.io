@@ -26,8 +26,10 @@ class GameScene extends Phaser.Scene {
 		//Level-to-Level data
 		this.holeId = data.holeId;
 		this.totalStrokes = data.totalStrokes;
+		this.totalTime = data.totalTime;
 		this.holeName = MAP_INFO[data.holeId].name;
 		this.par = MAP_INFO[data.holeId].par;
+		this.holeDisplayName = MAP_INFO[data.holeId].display_name;
 
 		//Objects
 		this.ball = null;
@@ -41,7 +43,11 @@ class GameScene extends Phaser.Scene {
 		this.indicator = null;
 		this.parText = null;
 		this.strokesText = null;
+		this.holeNameText = null;
+		this.timeText = null;
 		this.strokes = 0;
+		this.initTime = null;
+		this.time = 0;
 
 		//Helper
 		this.win = false;
@@ -209,8 +215,10 @@ class GameScene extends Phaser.Scene {
 		const objectLayer = this.map.getObjectLayer('Object_Layer');
 
 		//Menu bar
-		this.createMenuBar();
 		this.strokes = 0;
+		this.initTime = Date.now();
+		this.createMenuBar();
+		
 	
 		//Collider group init
 		this.ppGroup = this.physics.add.group();
@@ -422,6 +430,9 @@ class GameScene extends Phaser.Scene {
 		//Menu bar update
 		this.strokesText.setText('Strokes: ' + this.strokes);
 		this.parText.setText('Par: ' + this.par);
+		// Timer update
+		this.time = Date.now() - this.initTime;
+		this.timeText.setText('Time: ' + this.formatTime(this.time));
 		//Power bar update
 		if(this.powerBarActive){
 			this.handlePowerBar(this.ball.mouseDownCoords.x, 
@@ -476,7 +487,9 @@ class GameScene extends Phaser.Scene {
 										holeId: this.holeId, 
 										totalStrokes: (this.strokes + this.totalStrokes), 
 										strokes: this.strokes, 
-										par: this.par
+										par: this.par,
+										totalTime: this.totalTime + this.time,
+										time: this.time
 		});
 	}
 
@@ -495,7 +508,9 @@ class GameScene extends Phaser.Scene {
 
 		//Hole Information
         this.strokesText = this.add.text(10, 10, 'Strokes: 0', { fontSize: MENU_FONT_SIZE, fill: '#fff' });
-        this.parText = this.add.text(10, 34, 'Par: ' + this.par, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
+		this.timeText = this.add.text(10, 34, 'Time: ' + this.time, { fontSize: MENU_FONT_SIZE, fill: '#fff' })
+		this.holeNameText = this.add.text(870, 10, this.holeDisplayName, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
+        this.parText = this.add.text(870, 34, 'Par: ' + this.par, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
 
         // Ensure the menu bar is always on top
         this.children.bringToTop(this.scoreText);
@@ -520,6 +535,14 @@ class GameScene extends Phaser.Scene {
 		this.powerBar.angle = (angle * (180 / Math.PI));
 
 		this.updateCrop(force/MAX_BALL_SPEED);
+	}
+
+	formatTime(time){
+		let totalSeconds = Math.floor(time / 1000);
+		let minutes = Math.floor((totalSeconds % 3600) / 60);
+		let seconds = totalSeconds % 60;
+
+		return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 	}
 
 	updateCrop(powerPercentage) {

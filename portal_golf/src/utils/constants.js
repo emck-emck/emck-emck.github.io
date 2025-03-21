@@ -1,15 +1,14 @@
 //Map info
 export const MAP_INFO = [
-							// {name: 'sandbox', par: 99},
-							{name: 'hole_1', par: 3},
-							{name: 'hole_2', par: 4},
-							{name: 'hole_3', par: 5},
-							{name: 'hole_4', par: 3},
-							{name: 'hole_5', par: 3},
-							{name: 'hole_6', par: 5},
-							{name: 'hole_7', par: 5},
-							{name: 'hole_8', par: 5},
-							{name: 'hole_9', par: 5}
+							{name: 'hole_1', display_name: 'Hole 1', par: 3},
+							{name: 'hole_2', display_name: 'Hole 2', par: 4},
+							{name: 'hole_3', display_name: 'Hole 3', par: 5},
+							{name: 'hole_4', display_name: 'Hole 4', par: 3},
+							{name: 'hole_5', display_name: 'Hole 5', par: 3},
+							{name: 'hole_6', display_name: 'Hole 6', par: 5},
+							{name: 'hole_7', display_name: 'Hole 7', par: 5},
+							{name: 'hole_8', display_name: 'Hole 8', par: 5},
+							{name: 'hole_9', display_name: 'Hole 9', par: 5}
 ];
 
 //Number constants
