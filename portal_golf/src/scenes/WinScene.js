@@ -12,7 +12,7 @@ class WinScene extends Phaser.Scene {
 		this.totalStrokes = data.totalStrokes;
 		this.strokes = data.strokes;
 		this.totalTime = data.totalTime;
-		this.time = data.time;
+		this.gameTime = data.gameTime;
 		this.par = data.par;
 	}
 
@@ -56,7 +56,7 @@ class WinScene extends Phaser.Scene {
 				const strokesy = (bgy + bheight * 0.2) + fontSize + 5;
 				const parx = swidth/2;
 				const pary = (bgy + bheight * 0.2) + (fontSize*2) + 5;
-				this.add.text(timex, timey, 'Time: ' + formatTime(this.time), textStyle).setOrigin(0.5)
+				this.add.text(timex, timey, 'Time: ' + formatTime(this.gameTime), textStyle).setOrigin(0.5)
 				this.add.text(strokesx, strokesy, 'Sunk in ' + this.strokes, textStyle).setOrigin(0.5);
 				this.add.text(parx, pary, 'Par: ' + this.par, textStyle).setOrigin(0.5);
 
@@ -123,8 +123,8 @@ class WinScene extends Phaser.Scene {
 	}
 }
 
-function formatTime(time){
-	let totalSeconds = Math.floor(time / 1000);
+function formatTime(t){
+	let totalSeconds = Math.floor(t / 1000);
 	let hours = Math.floor(totalSeconds / 3600);
 	let minutes = Math.floor((totalSeconds % 3600) / 60);
 	let seconds = totalSeconds % 60;

@@ -47,7 +47,7 @@ class GameScene extends Phaser.Scene {
 		this.timeText = null;
 		this.strokes = 0;
 		this.initTime = null;
-		this.time = 0;
+		this.gameTime = 0;
 
 		//Helper
 		this.win = false;
@@ -431,8 +431,8 @@ class GameScene extends Phaser.Scene {
 		this.strokesText.setText('Strokes: ' + this.strokes);
 		this.parText.setText('Par: ' + this.par);
 		// Timer update
-		this.time = Date.now() - this.initTime;
-		this.timeText.setText('Time: ' + this.formatTime(this.time));
+		this.gameTime = Date.now() - this.initTime;
+		this.timeText.setText('Time: ' + this.formatTime(this.gameTime));
 		//Power bar update
 		if(this.powerBarActive){
 			this.handlePowerBar(this.ball.mouseDownCoords.x, 
@@ -488,8 +488,8 @@ class GameScene extends Phaser.Scene {
 										totalStrokes: (this.strokes + this.totalStrokes), 
 										strokes: this.strokes, 
 										par: this.par,
-										totalTime: this.totalTime + this.time,
-										time: this.time
+										totalTime: this.totalTime + this.gameTime,
+										gameTime: this.gameTime
 		});
 	}
 
@@ -508,7 +508,7 @@ class GameScene extends Phaser.Scene {
 
 		//Hole Information
         this.strokesText = this.add.text(10, 10, 'Strokes: 0', { fontSize: MENU_FONT_SIZE, fill: '#fff' });
-		this.timeText = this.add.text(10, 34, 'Time: ' + this.time, { fontSize: MENU_FONT_SIZE, fill: '#fff' })
+		this.timeText = this.add.text(10, 34, 'Time: ' + this.gameTime, { fontSize: MENU_FONT_SIZE, fill: '#fff' })
 		this.holeNameText = this.add.text(870, 10, this.holeDisplayName, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
         this.parText = this.add.text(870, 34, 'Par: ' + this.par, { fontSize: MENU_FONT_SIZE, fill: '#fff' });
 
@@ -537,8 +537,8 @@ class GameScene extends Phaser.Scene {
 		this.updateCrop(force/MAX_BALL_SPEED);
 	}
 
-	formatTime(time){
-		let totalSeconds = Math.floor(time / 1000);
+	formatTime(t){
+		let totalSeconds = Math.floor(t / 1000);
 		let minutes = Math.floor((totalSeconds % 3600) / 60);
 		let seconds = totalSeconds % 60;
 
