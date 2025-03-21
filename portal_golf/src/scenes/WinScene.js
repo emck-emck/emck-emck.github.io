@@ -154,7 +154,7 @@ function sendScore(scene, p, t){
 		},
 		body: JSON.stringify({
 			name: n,
-			putt: p,
+			putt: p.toString(),
 			time: t,
 			date: new Date().toISOString().slice(0, 10)
 		})
