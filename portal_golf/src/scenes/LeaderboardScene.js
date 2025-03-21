@@ -33,6 +33,7 @@ class LeaderboardScene extends Phaser.Scene {
 				fetch('https://pg-leaderboard-worker.portal-golf.workers.dev/topten?page=0')
 					.then(r => r.json())
 					.then(data => {
+						console.log(data);
 						var scores = data.scores;
 						var scoresObj = document.getElementById('scores');
 						var append = '';
