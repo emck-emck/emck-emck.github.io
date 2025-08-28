@@ -1,0 +1,44 @@
+//Imports
+import { SCREEN_HEIGHT, SCREEN_WIDTH } from './utils/constants.js';
+import MenuScene from './scenes/MenuScene.js';
+import GameScene from './scenes/GameScene.js';
+import WinScene from './scenes/WinScene.js';
+import InstructionsMenuScene from './scenes/InstructionsMenuScene.js';
+import LevelSelectScene from './scenes/LevelSelectScene.js';
+import LeaderboardScene from './scenes/LeaderboardScene.js';
+import PauseMenuScene from './scenes/PauseMenuScene.js';
+
+//Magic Phaser3 Configuration Stuff
+var config = {
+  parent: 'game-container',
+  type: Phaser.AUTO,
+  scale: {
+    mode: Phaser.Scale.FIT,
+    // Ensures the game scales to fit the screen
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+    // Centers the game
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT
+  },
+  physics: {
+    "default": 'arcade',
+    arcade: {
+      gravity: {
+        y: 0
+      },
+      debug: false,
+      fps: 120,
+      // Target FPS
+      timeScale: 1,
+      // Scale of the physics time, 1 is normal speed
+      maxPhysicsSteps: 1 // Max number of physics steps per frame
+    }
+  },
+  scene: [MenuScene, GameScene, WinScene, InstructionsMenuScene, LeaderboardScene, LevelSelectScene, PauseMenuScene]
+};
+
+//RUNS THE GAME
+var game = new Phaser.Game(config);
+
+//Injects the canvas element into a div for styling purposes
+document.getElementById("gameWrapper").appendChild(game.canvas);
