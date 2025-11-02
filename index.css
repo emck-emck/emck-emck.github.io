@@ -97,6 +97,10 @@ header {
   height: auto;             /* Maintain aspect ratio */
 }
 
+.about-me-text {
+  text-align: left;
+}
+
 /* Responsive Styling for Mobile */
 @media (max-width: 768px) {
   .menu-toggle {
