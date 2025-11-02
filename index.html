@@ -23,8 +23,8 @@
 		
 				<ul class="nav-links" id="nav-links">
 					<li class="menulink"><a href="#home">Home</a></li>
-					<li class="menulink"><a href="#about">About</a></li>
 					<li class="menulink"><a href="#projects">Projects</a></li>
+					<li class="menulink"><a href="#about">About</a></li>
 					<li class="menulink"><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -35,13 +35,6 @@
 			<div class="block">
 				<h1>Welcome</h1>
 				<p>I'm an armchair theologian, a budding electrician, and a hobbyist programmer. This is a website to show my coding projects and share a little bit about myself with people.</p>
-			</div>
-		</section>
-		
-		<section id="about" class="section">
-			<div class="block">
-				<h2>About</h2>
-				<div id="about-me-text">Loading...</div>
 			</div>
 		</section>
 		
@@ -59,6 +52,13 @@
 			</div>
 		</section>
 		
+		<section id="about" class="section">
+			<div class="block">
+				<h2>About Me</h2>
+				<div id="about-me-text">Loading...</div>
+			</div>
+		</section>
+
 		<section id="contact" class="section">
 			<div class="block">
 				<h2>Contact</h2>
@@ -98,6 +98,7 @@
 						append = append + line;
 						append = append + "</p>";
 					}
+					aboutMeDiv.innerHTML = append;
 			})
 			.catch(error => {
 				document.getElementById('about-me-text').textContent = "Error loading About section.";
