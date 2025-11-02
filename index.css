@@ -1,25 +1,142 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic Page Setup */
 body {
-	background-color: #aaaaaa;
+  font-family: monospace;
+  line-height: 1.6;
 }
 
-.content {
-    height: 100%; /* Ensure full height */
-    margin: 0;
+/* Header / Navbar */
+header {
+  background-color: #222;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+/* Hamburger Menu (Hidden on Desktop) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Section Styling */
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.block {
+  width: 50%;
+}
+
+.project {
+  width: 100%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000;
+  margin: 10px;
+}
+
+.projectimg {
+  display: block;
+  margin: 0 auto;           /* Center horizontally */
+  max-width: 100%;          /* Prevent overflow */
+  height: auto;             /* Maintain aspect ratio */
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    text-align: center; /* Centers inline text */
-}
+  }
 
-h1, h2, h3, p {
-    width: fit-content; /* Prevents them from stretching full width */
-    margin: 0 auto; /* Ensures they are truly centered */
-}
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background-color: #222;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
 
-#links img {
-	max-width: 100%;  /* Prevents it from exceeding the container width */
-    max-height: 400px; /* Limits the height */
-    display: block;    /* Removes extra space below inline images */
-    margin: 0 auto;    /* Centers the image */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+    /* Animate hamburger */
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-90deg) translate(-8px, 8px);
+  }
+  .menu-toggle.active .bar:nth-child(2) {
+    transform: rotate(-90deg);
+  }
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-90deg) translate(8px, -8px);
+  }
+
+  /*Set page items to full screen width for small screens*/
+  .block {
+    width: 100%
+  }
 }

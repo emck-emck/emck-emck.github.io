@@ -1,17 +1,109 @@
-<head>
-	<title>Eric's Projects</title>
-	<link rel="icon" type="image/x-icon" href="./icons/e.ico"></link>
-	<link rel="stylesheet" href="./index.css"></link>
-</head>
-<body>
-	<div id="content">
-		<h1>Eric's Website (Under Construction)</h1>
-		<h2>Last Update: March 21 2025 -- 15:16</h2>
-		<h3>Projects</h3>
-		<div id="links">
-			<a href="./portal_golf/"><img src="./icons/portal_golf.png" alt="Portal Golf"/></a>
-			<br/>
-			<a href="./extreme_tic_tac_toe/"><img src="./icons/extreme_tic_tac_toe.png" alt="Extreme Tic-Tac-Toe"/></a>
-		</div>
-	</div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eric McKenzie</title>
+		<link rel="stylesheet" href="./index.css" />
+		<link rel="icon" type="image/x-icon" href="./icons/e.ico"></link>
+	</head>
+	<body>
+	
+		<!-- Header / Navbar -->
+		<header>
+			<nav class="navbar">
+				<div class="logo">Eric McKenzie</div>
+		
+				<!-- Hamburger Menu Button -->
+				<div class="menu-toggle" id="mobile-menu">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</div>
+		
+				<ul class="nav-links" id="nav-links">
+					<li class="menulink"><a href="#home">Home</a></li>
+					<li class="menulink"><a href="#about">About</a></li>
+					<li class="menulink"><a href="#projects">Projects</a></li>
+					<li class="menulink"><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- Main Content Sections -->
+		<section id="home" class="section">
+			<div class="block">
+				<h1>Welcome</h1>
+				<p>I'm an armchair theologian, a budding electrician, and a hobbyist programmer. This is a website to show my coding projects and share a little bit about myself with people.</p>
+			</div>
+		</section>
+		
+		<section id="about" class="section">
+			<div class="block">
+				<h2>About</h2>
+				<div id="about-me-text">Loading...</div>
+			</div>
+		</section>
+		
+		<section id="projects" class="section">
+			<div class="block">
+				<h2>Projects</h2>
+				<div class="project">
+					<a class="project-link" href="./portal_golf/"><img class="projectimg" src="./icons/portal_golf.png" alt="Portal Golf"/></a>
+					<p>This Javascript game is a mini-golf simulator that incorporates elements from the Portal game franchise. I took about a month in 2024 to build the core of the game, and a while more in 2025 to polish it. All source code can be found and forked <a href="https://github.com/emck-emck/phaser-portal-golf">here</a>.</p>
+				</div>
+				<div class="project">
+					<a class="project-link" href="./extreme_tic_tac_toe/"><img class="projectimg" src="./icons/extreme_tic_tac_toe.png" alt="Extreme Tic-Tac-Toe"/></a>
+					<p>This Typescript game built using Angular is a complex verison of tic-tac-toe. The concept was introduced to me in 2014 or so, I implemented the game in 2022 and polished it further in 2025. All source code can be found and forked <a href="https://github.com/emck-emck/extreme-tic-tac-toe">here</a>.</p>
+				</div>
+			</div>
+		</section>
+		
+		<section id="contact" class="section">
+			<div class="block">
+				<h2>Contact</h2>
+				<p><a href="mailto:eric.c.mckenzie@gmail.com">eric.c.mckenzie@gmail.com</a></p>
+				<p><a href="https://www.linkedin.com/in/emck-emck/">LinkedIn</a></p>
+			</div>
+		</section>
+		
+		<script>
+			// Toggle navigation on mobile
+			const menuLinks = document.getElementsByClassName("menulink");
+			const hamburger = document.getElementById('mobile-menu');
+		
+			for(let link of menuLinks){
+				link.addEventListener('click', toggleMenu);
+			}
+			hamburger.addEventListener('click', toggleMenu);
+
+			function toggleMenu(){
+				const navLinks = document.getElementById('nav-links');
+				navLinks.classList.toggle('active');
+				hamburger.classList.toggle('active');
+			};
+		</script>
+
+		<script>
+			// Code to load about me text
+			fetch('aboutme.txt')
+				.then(response => response.text())
+				.then(data => {
+					var aboutMeDiv = document.getElementById('about-me-text');
+					var txt = data.split(/\r?\n/);
+					var append = "";
+
+					for(const line of txt){
+						append = append + "<p>";
+						append = append + line;
+						append = append + "</p>";
+					}
+			})
+			.catch(error => {
+				document.getElementById('about-me-text').textContent = "Error loading About section.";
+				console.error(error);
+			});
+		</script>
+	
+	</body>
+</html>
