@@ -21,6 +21,10 @@ header {
   z-index: 1000;
 }
 
+#about-me-text {
+  text-align: left;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -95,10 +99,6 @@ header {
   margin: 0 auto;           /* Center horizontally */
   max-width: 100%;          /* Prevent overflow */
   height: auto;             /* Maintain aspect ratio */
-}
-
-.about-me-text {
-  text-align: left;
 }
 
 /* Responsive Styling for Mobile */
