@@ -1,9 +1,11 @@
 html, body {
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	height: 100%;
-	width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  font-family: monospace;
+  line-height: 1.6;
 }
 
 /* Header / Navbar */
@@ -17,12 +19,12 @@ header {
 }
 
 canvas {
-	display: block;
-	margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 #gameWrapper {
-	position: relative;
+  position: relative;
 }
 
 .logo {
