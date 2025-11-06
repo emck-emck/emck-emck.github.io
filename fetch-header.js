@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const headerPlaceholder = document.getElementById("header");
 
-  fetch("header.html")
+  fetch("https://emck-emck.github.io/header.html")
     .then(response => response.text())
     .then(data => {
       headerPlaceholder.innerHTML = data;
