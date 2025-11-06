@@ -127,10 +127,6 @@ header {
     width: 100%;
     text-align: center;
   }
-  
-  .section {
-    padding: 80px 0;
-  }
 
     /* Animate hamburger */
   .menu-toggle.active .bar:nth-child(1) {
