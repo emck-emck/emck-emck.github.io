@@ -107,9 +107,13 @@ header {
     display: flex;
   }
 
+  .navbar {
+    position: relative;
+  }
+
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 100%;
     right: 0;
     width: 100%;
     background-color: #222;

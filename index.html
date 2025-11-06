@@ -6,29 +6,12 @@
 		<title>Eric McKenzie</title>
 		<link rel="stylesheet" href="./index.css" />
 		<link rel="icon" type="image/x-icon" href="./icons/e.ico"></link>
+		<script src="./fetch-header.js"></script>
 	</head>
 	<body>
 	
 		<!-- Header / Navbar -->
-		<header>
-			<nav class="navbar">
-				<div class="logo">Eric McKenzie</div>
-		
-				<!-- Hamburger Menu Button -->
-				<div class="menu-toggle" id="mobile-menu">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
-				</div>
-		
-				<ul class="nav-links" id="nav-links">
-					<li class="menulink"><a href="#home">Home</a></li>
-					<li class="menulink"><a href="#projects">Projects</a></li>
-					<li class="menulink"><a href="#about">About</a></li>
-					<li class="menulink"><a href="#contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+		<div id="header"></div>
 		
 		<!-- Main Content Sections -->
 		<section id="home" class="section">
@@ -67,23 +50,6 @@
 				<p><a href="https://www.linkedin.com/in/emck-emck/">LinkedIn</a></p>
 			</div>
 		</section>
-		
-		<script>
-			// Toggle navigation on mobile
-			const menuLinks = document.getElementsByClassName("menulink");
-			const hamburger = document.getElementById('mobile-menu');
-		
-			for(let link of menuLinks){
-				link.addEventListener('click', toggleMenu);
-			}
-			hamburger.addEventListener('click', toggleMenu);
-
-			function toggleMenu(){
-				const navLinks = document.getElementById('nav-links');
-				navLinks.classList.toggle('active');
-				hamburger.classList.toggle('active');
-			};
-		</script>
 
 		<script>
 			// Code to load about me text
