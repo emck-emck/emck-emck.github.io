@@ -28,5 +28,22 @@
 	</header>
 	<script type="module" src="be2391ffec99cb90372d.js"></script>
 	<div id="gameWrapper"></div>
-<script defer src="bundle.js"></script></body>
+	<script defer src="bundle.js"></script>
+	<script>
+		// Toggle navigation on mobile
+		const menuLinks = document.getElementsByClassName("menulink");
+		const hamburger = document.getElementById('mobile-menu');
+	
+		for(let link of menuLinks){
+			link.addEventListener('click', toggleMenu);
+		}
+		hamburger.addEventListener('click', toggleMenu);
+
+		function toggleMenu(){
+			const navLinks = document.getElementById('nav-links');
+			navLinks.classList.toggle('active');
+			hamburger.classList.toggle('active');
+		};
+	</script>
+</body>
 </html>
