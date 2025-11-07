@@ -4,7 +4,6 @@
 }
 
 body {
-  position: absolute;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -18,15 +17,12 @@ body {
 #header {
   background-color: #222;
   color: #fff;
-  position: sticky;
-  top: 0;
-  flex-shrink: 0;
   width: 100%;
   z-index: 1000;
 }
 
 #gameWrapper {
-  flex-grow: 1;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
