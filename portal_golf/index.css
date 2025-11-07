@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-html {
-  overflow: hidden;
-}
-
 body {
   overflow: hidden;
   height: 100%;
@@ -16,20 +12,24 @@ body {
 }
 
 /* Header / Navbar */
-header {
+#header {
   background-color: #222;
   color: #fff;
   position: sticky;
   top: 0;
+  flex-shrink: 0;
   width: 100%;
   z-index: 1000;
+}
+
+#game-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 canvas {
   display: block;
   margin: 0 auto;
-}
-
-#gameWrapper {
-  position: relative;
 }
