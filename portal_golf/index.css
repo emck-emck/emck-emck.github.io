@@ -22,7 +22,7 @@ body {
   z-index: 1000;
 }
 
-#game-container {
+#gameWrapper {
   flex-grow: 1;
   display: flex;
   justify-content: center;
