@@ -4,9 +4,6 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   width: 100%;
   font-family: monospace;
   line-height: 1.6;
@@ -24,6 +21,12 @@ body {
 #gameWrapper {
   flex-grow: 1;
   overflow: hidden;
+}
+
+.allwrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 canvas {
