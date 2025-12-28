@@ -7,15 +7,13 @@ body {
   width: 100%;
   font-family: monospace;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header / Navbar */
 #header {
   flex: 0 0 auto;
-  background-color: #222;
-  color: #fff;
-  width: 100%;
-  z-index: 1000;
 }
 
 #gameWrapper {
