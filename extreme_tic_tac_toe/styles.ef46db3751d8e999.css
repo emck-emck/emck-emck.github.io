@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: monospace;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header / Navbar */
+#header {
+  flex: 0 0 auto;
+}
+
+#gameWrapper {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
