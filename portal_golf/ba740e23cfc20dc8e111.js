@@ -10,7 +10,7 @@ import PauseMenuScene from './scenes/PauseMenuScene.js';
 
 //Magic Phaser3 Configuration Stuff
 var config = {
-  parent: 'game-container',
+  parent: 'gameWrapper',
   type: Phaser.AUTO,
   scale: {
     mode: Phaser.Scale.FIT,
