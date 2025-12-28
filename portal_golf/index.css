@@ -23,12 +23,6 @@ body {
   overflow: hidden;
 }
 
-.allwrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 canvas {
   display: block;
   margin: 0 auto;
