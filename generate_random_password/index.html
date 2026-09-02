@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Eric McKenzie</title>
+		<link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+		<link rel="stylesheet" href="./index.css">
+		<script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+		<script type="py" src="./generate-random-password.py" config="./pyscript.json" terminal></script>
+        <script src="../fetch-header.js"></script>
+	</head>
+	<body>
+		<div id="header"></div>
+		<div id="title">
+			<h1>Python Generate Random Password</h1>
+		</div>
+		<div id="container">
+			<div id="content">
+				<h3>Number of characters for password (must be between 8 and 24)</h3>
+				<form>
+					<div id="inputcontainer">
+						<p># Characters</p>
+						<input id="numchars"
+								type="number"
+								step="1"
+								min="8"
+								max="24"
+								required>
+						</input>
+						<span class="validity"></span>
+					</div>
+					<input id="genpass" type="submit" value="Generate"></input>
+				</form>
+				<br/>
+				<div id="passoutput">PASSWORD</div>
+			</div>
+		</div>
+	</body>
+</html>
