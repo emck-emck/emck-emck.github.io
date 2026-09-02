@@ -11,6 +11,7 @@
         <script src="../fetch-header.js"></script>
 	</head>
 	<body>
+		<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
 		<div id="header"></div>
 		<div id="title">
 			<h1>Python Generate Random Password</h1>
@@ -18,7 +19,7 @@
 		<div id="container">
 			<div id="content">
 				<h3>Number of characters for password (must be between 8 and 24)</h3>
-				<form>
+				<form id="inputform" target="dummyframe">
 					<div id="inputcontainer">
 						<p># Characters</p>
 						<input id="numchars"
@@ -26,11 +27,11 @@
 								step="1"
 								min="8"
 								max="24"
-								required>
+								onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();">
 						</input>
 						<span class="validity"></span>
 					</div>
-					<input id="genpass" type="submit" value="Generate"></input>
+					<button id="genpass">Generate</button>
 				</form>
 				<br/>
 				<div id="passoutput">PASSWORD</div>
