@@ -11,7 +11,7 @@ validChars = [validUpper, validLower, validNumber, validSpecial]
 # The generating code
 @when("click", "#genpass")
 def generatePassword(event):
-  n = int(web.page["numchars"])
+  n = int(web.page["numchars"].value)
   ret = ""
   for i in range(0, n):
     rando1 = int(random.random() * 4)
