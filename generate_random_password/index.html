@@ -3,9 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Eric McKenzie</title>
+		<title>Generate Random Password</title>
 		<link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
 		<link rel="stylesheet" href="./index.css">
+		<link rel="icon" type="image/x-icon" href="./assets/hashtag.ico"></link>
 		<script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 		<script type="py" src="./generateRandomPassword.py"></script>
         <script src="../fetch-header.js"></script>
@@ -18,8 +19,11 @@
 		</div>
 		<div id="container">
 			<div id="content">
-				<h3>Number of characters for password (must be between 8 and 24)</h3>
-				<form id="inputform" target="dummyframe">
+				<div id="subcontainer">
+					<h3>Number of characters for password</h3>
+					<h3>(must be between 8 and 24)</h3>
+				</div>
+				<form id="inputform" target="dummyframe" py-submit="generatePassword()">
 					<div id="inputcontainer">
 						<p># Characters</p>
 						<input id="numchars"
@@ -27,11 +31,12 @@
 								step="1"
 								min="8"
 								max="24"
-								onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();">
+								onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();"
+								required >
 						</input>
 						<span class="validity"></span>
 					</div>
-					<button id="genpass">Generate</button>
+					<button id="genpass" type="submit">Generate</button>
 				</form>
 				<br/>
 				<div id="passoutput">PASSWORD</div>

@@ -40,6 +40,11 @@ body {
   padding: 5px;
 }
 
+#subcontainer {
+  margin: 0px 0px 10px 10px;
+  text-align: center;
+}
+
 #inputcontainer {
   display: flex;
   margin: 0px 30px 0px 0px;
@@ -56,10 +61,19 @@ body {
   width: fit-content;
 }
 
-h3 {
-  margin: 10px;
-}
-
 p {
   margin: 0px 10px 0px 0px;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 768px) {
+
+  /*Set page items to full screen width for small screens*/
+  #container {
+    height: 400px;
+  }
+
+  #content {
+    width: 100%;
+  }
 }

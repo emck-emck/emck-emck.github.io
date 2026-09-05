@@ -1,0 +1,84 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Palindrome Fun</title>
+	<link rel="icon" type="image/x-icon" href="./assets/infinity.ico"></link>
+	<link rel="stylesheet" href="./index.css">
+	<script src="./palindromeFun.js"></script>
+	<script src="../fetch-header.js"></script>
+</head>
+<body>
+	<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+	<div id="header"></div>
+	<div id="context"></div>
+	<div id="container">
+		<div id="title">
+			<h1>Palindrome fun!</h1>
+		</div>
+		<br/>
+		<div id="collapsible">
+			<input type="checkbox" id="toggle-box" class="toggle-input">
+			<label for="toggle-box" class="toggle-label">What is this project?</label>
+			<div class="collapsible-content">
+				<p>In 2022 I was playing around with a calculator, and I discovered that when an integer is subracted from its palindrome, the absolute result is divisible by 9.</p><br/>
+				<p>In addition to this, when the process is repeated, one arrives at a palindrome number, which sets the subtraction equal to 0, ending the process.</p><br/>
+				<p>For example, take the number "123".</p>
+				<p><b>123 - 321 = 198</b></p>
+				<p><b>198 / 9 = 22</b></p><br/>
+				<p><b>22 - 22 = 0</b></p>
+				<p><b>0 / 9 = 0</b></p><br/>
+				<p>I found this interesting, and wrote a program to systematically solve every number (up to the integer limit). I lost that program in a computer failure, so in 2026 I created this Javascript widget that helps demonstrate the concept.</p>
+			</div>
+		</div>
+		<br/>
+		<div id="content">
+			<form id="solveone" class="inputform" onsubmit="solveVerbose()" target="dummyframe">
+				<p>Enter an integer (max size 9007199254740991)</p>
+				<input id="input"
+						type="number"
+						step="1"
+						min="1"
+						max="9007199254740991"
+						onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();"
+						required >
+				</input>
+				<span class="validity"></span>
+				<button id="solveverbose" type="submit">SOLVE</button>
+			</form>
+			<br/>
+			<form id="solverange" class="inputform" onsubmit="solveLong()" target="dummyframe">
+				<p>OR, enter two positive integers; the program will solve all numbers between minimum and maximum</p>
+				<div id="inputcontainer">
+					<div class="input">
+						<p><b>Min: </b></p>
+						<input id="min"
+								type="number"
+								step="1"
+								min="1"
+								max="9007199254740991"
+								onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();"
+								required >
+						</input>
+					</div>
+					<div class="input">
+						<p><b>Max: </b></p>
+						<input id="max"
+								type="number"
+								step="1"
+								min="1"
+								max="9007199254740991"
+								onkeydown="if(['.', 'e', 'E', '+', '-'].includes(event.key)) event.preventDefault();"
+								required >
+						</input>
+					</div>
+				</div>
+				<span class="validity"></span>
+				<button id="solvelong" type="submit">SOLVE</button>
+			</form>
+		</div>
+		<br/>
+		<div id="outputdiv">
+			<p id="output">OUTPUT GOES HERE</p>
+		</div>
+	</div>
+</body>

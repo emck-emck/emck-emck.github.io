@@ -1,0 +1,134 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic Page Setup */
+body {
+  font-family: monospace;
+  line-height: 1.6;
+}
+
+#header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+#title {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#content {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  border: 3px solid rgb(0 0 0);
+  border-radius: 0.5em;
+  padding: 5px;
+}
+
+#subcontainer {
+  margin: 0px 0px 10px 10px;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  margin: 0px 30px 0px 0px;
+}
+
+#inputcontainer {
+  display: flex;
+}
+
+.inputform {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+#outputdiv {
+  border: 1px solid rgb(0 0 0);
+  border-radius: 0.5em;
+  padding: 5px;
+  width: 50%;
+  text-align: center;
+  max-height: 300px;
+  overflow: auto;
+}
+
+p {
+  margin: 0px 10px 0px 0px;
+}
+
+#collapsible {
+  width: 50%;
+  border: 1px solid #000;
+}
+
+/* Completely hide the actual checkbox */
+.toggle-input {
+  display: none;
+}
+
+/* Style the label acting as the header button */
+.toggle-label {
+  display: block;
+  padding: 15px;
+  background: #f1f1f1;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Content container defaults to a height of 0 and stays hidden */
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #fff;
+}
+
+/* When the hidden checkbox is checked, expand the adjacent content wrapper */
+.toggle-input:checked ~ .collapsible-content {
+  max-height: 1000px; /* Set to a value larger than your content */
+  padding: 15px;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 1000px) {
+
+  /*Set page items to full screen width for small screens*/
+  #content {
+    width: 100%;
+  }
+
+  #collapsible {
+    width: 100%;
+  }
+
+  #outputdiv {
+    width: 100%;
+  }
+
+  #input {
+	width: 90%;
+  }
+
+  input {
+	width: 90%;
+  }
+}
