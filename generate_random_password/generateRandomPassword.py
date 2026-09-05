@@ -10,6 +10,11 @@ validChars = [validUpper, validLower, validNumber, validSpecial]
 
 # Main function
 def generatePassword(event = None):
+  if event:
+    event.preventDefault()
+  else:
+    return
+
   n = int(web.page["numchars"].value)
   ret = ""
 
