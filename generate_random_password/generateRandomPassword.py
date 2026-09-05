@@ -34,4 +34,4 @@ def generatePassword(event = None):
   output = web.page["passoutput"]
   output.innerText = ret
 
-Element("form").element.onsubmit = generatePassword
+Element("inputform").element.onsubmit = generatePassword
