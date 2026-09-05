@@ -8,30 +8,32 @@ validNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 validSpecial = ["!", "@", "#", "$", "%", "^", "&", "*"]
 validChars = [validUpper, validLower, validNumber, validSpecial]
 
-# Main function
-def generatePassword(event = None):
+# Main function'
+@when("submit", "#inputform")
+def generatePassword(event):
   if event:
     event.preventDefault()
+  else:
+    return
 
-    # Web input
-    n = int(event.target.value)
+  # Web input
+  n = int(web.page["numchars"].value)
 
-    # Input sanity
-    if n < 8:
-      return
-   
-    # Input sanity
-    if n > 24:
-      return
-   
-    # The generating code
-    ret = ""
-    for i in range(0, n):
-      rando1 = int(random.random() * 4)
-      rando2 = int(random.random() * len(validChars[rando1]))
-      ret = ret + validChars[rando1][rando2]
-   
-    # Web output
-    display(ret, target="passoutput")
-
-Element("inputform").element.onsubmit = generatePassword
+  # Input sanity
+  if n < 8:
+    return
+  
+  # Input sanity
+  if n > 24:
+    return
+  
+  # The generating code
+  ret = ""
+  for i in range(0, n):
+    rando1 = int(random.random() * 4)
+    rando2 = int(random.random() * len(validChars[rando1]))
+    ret = ret + validChars[rando1][rando2]
+  
+  # Web output
+  output = web.page["passoutput"]
+  output.innerText = ret
